@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061225">
+  <meta name="description" content="남성 건강 상담을 위한 프라이빗 온라인 상담 안내">
+  <title>MENHANCE | 프라이빗 남성 건강 상담</title>
+  
+  <!-- ==================== [保留] SaleSmartly 核心客服脚本开始 ==================== -->
+  <script src="https://plugin-code.salesmartly.com/js/project_839145_873794_1791183960.js"></script>
+  <script>
+      (function(d, s, id, w, n) {
+          w.__ssc = w.__ssc || {};
+          w.__ssc.license = 'g21lq1r'; // 您的 SaleSmartly 专属许可证代码
+          if (w.ssq) return false;
+          n = w.ssq = function() {n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          n.push=n;n.loaded=!0;n.queue=[];
+          var js, sjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          var deUrl = atob('aHR0cHM6Ly9wbHVnaW4tY29kZS5zYWxlc21hcnRseS5jb20='), path = '/chat/widget-v2/code/install.js';
+          var cs = d.currentScript, csUrl = deUrl;
+          if (cs && cs.src) {var scriptURL = new URL(cs.src); csUrl = scriptURL.origin;}
+          js.src = csUrl + path;
+          sjs.parentNode.insertBefore(js, sjs);
+          js.onerror = function() {
+              if (d.getElementById(id)) {var el = d.getElementById(id); el.parentNode.removeChild(el);}
+              var newJs = d.createElement(s); newJs.id = id;
+              newJs.src = deUrl + path;
+              sjs.parentNode.insertBefore(newJs, sjs);
+          }
+      }(document, 'script', 'ss-chat', window));
+  </script>
+  <!-- ==================== [保留] SaleSmartly 核心客服脚本结束 ==================== -->
+
+  <!-- ==================== [新增] 专门用于按钮跳转 WhatsApp 的逻辑 ==================== -->
+  <script>
+    function openWhatsAppChat() {
+        // 🚨 请在此处将 85260000000 替换为您真正的 WhatsApp 客服手机号码（带国家代码，不加+号或空格）
+        var whatsappNumber = "85260000000"; 
+        
+        // 预设用户点开后输入框自动带出的打招呼韩文话术
+        var defaultText = encodeURIComponent("안녕하세요. 비공개 상담 문의드립니다.");
+        
+        // 构建标准的 WhatsApp API 跳转链接并在新窗口打开
+        var url = "https://wa.me" + whatsappNumber + "?text=" + defaultText;
+        window.open(url, '_blank');
+    }
+  </script>
+  <!-- ==================== 专门用于按钮跳转 WhatsApp 的逻辑结束 ==================== -->
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050d1b;
+      --panel: #0b1c33;
+      --line: rgba(117,202,255,.2);
+      --cyan: #55eaff;
+      --white: #f4f9ff;
+      --muted: #a9bdd2;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, "Pretendard", "Noto Sans KR",
+        system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 44px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(4,12,25,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 950;
+      letter-spacing: .15em;
+      font-size: 1.08rem;
+    }
+
+    .logo span { color: var(--cyan); }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .9rem;
+      color: #c5d7e8;
+    }
+
+    .navlinks a:hover,
+    .footer-links a:hover { color: var(--cyan); }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+
+    .btn-primary {
+      color: #03101c;
+      background: linear-gradient(110deg,#55eaff,#9af5ff);
+      box-shadow: 0 0 28px rgba(85,234,255,.16);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(85,234,255,.28);
+    }
+
+    .btn-ghost {
+      border-color: rgba(117,202,255,.36);
+      background: rgba(14,42,72,.55);
+      color: #f1fbff;
+    }
+
+    .btn-ghost:hover { border-color: var(--cyan); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 68px;
+      background:
+        radial-gradient(ellipse at 78% 42%,rgba(0,127,255,.2),transparent 38%),
+        linear-gradient(135deg,#061225,#081a31 58%,#04101f);
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(75,169,255,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(75,169,255,.045) 1px,transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom,#000,transparent);
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 7px 13px;
+      color: var(--cyan);
+      font-size: .75rem;
+      letter-spacing: .13em;
+      background: rgba(5,24,46,.68);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    h1 {
+      font-size: clamp(2.55rem,5vw,4.65rem);
+      line-height: 1.14;
+      letter-spacing: -.055em;
+      margin: 23px 0 20px;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--cyan);
+      text-shadow: 0 0 28px rgba(85,234,255,.16);
+    }
+
+    .lead {
+      font-size: 1.06rem;
+      color: #c3d6e9;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0 18px;
+    }
+
+    .microcopy {
+      font-size: .78rem;
+      color: #8faac4;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 465px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit {
+      position: absolute;
+      width: min(100%,440px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(85,234,255,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 45px rgba(0,145,255,.1),
+        inset 0 0 45px rgba(0,145,255,.08);
+    }
+
+    .orbit:before,
+    .orbit:after {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px dashed rgba(85,234,255,.28);
+      border-radius: 50%;
+    }
+
+    .orbit:after {
+      inset: 20%;
+      border-style: solid;
+      opacity: .65;
+    }
+
+    .human {
+      position: relative;
+      width: min(100%,365px);
+      filter: drop-shadow(0 0 22px rgba(25,157,255,.55));
+      z-index: 1;
+    }
+
+    .scan-label {
+      position: absolute;
+      border: 1px solid rgba(85,234,255,.4);
+      background: rgba(4,19,39,.9);
+      padding: 11px 14px;
+      border-radius: 12px;
+      color: #d3faff;
+      font-size: .75rem;
+      z-index: 2;
+    }
+
+    .scan-label b {
+      display: block;
+      color: var(--cyan);
+      font-size: .69rem;
+      letter-spacing: .12em;
+      margin-bottom: 3px;
+    }
+
+    .label-a { top: 13%; right: 0; }
+    .label-b { bottom: 13%; left: 0; }
+    .label-c { right: 0; bottom: 26%; }
+
+    .trustbar {
+      border-block: 1px solid var(--line);
+      background: #07152a;
+    }
+
+    .trustgrid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      padding: 22px 0;
+    }
+
+    .trustitem {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .trusticon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: none;
+      border: 1px solid rgba(85,234,255,.36);
+      border-radius: 13px;
+      color: var(--cyan);
+      font-size: 1.15rem;
+    }
+
+    .trustitem strong { display: block; font-size: .91rem; }
+    .trustitem small { display: block; color: var(--muted); font-size: .77rem; }
+
+    section.content-section { padding: 80px 0; }
+
+    .section-head {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .kicker {
+      color: var(--cyan);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .73rem;
+      font-weight: 850;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem,3.5vw,2.9rem);
+      letter-spacing: -.045em;
+      line-height: 1.22;
+      margin: 12px 0;
+    }
+
+    .section-head p { color: var(--muted); margin: 0; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 17px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 25px;
+      background: linear-gradient(145deg,rgba(13,35,62,.92),rgba(6,19,36,.92));
+      min-height: 225px;
+    }
+
+    .card-icon { font-size: 1.5rem; color: var(--cyan); }
+    .num { color: var(--cyan); font-size: .72rem; letter-spacing: .15em; margin-top: 12px; }
+    .card h3 { font-size: 1.17rem; margin: 13px 0 8px; }
+    .card p { color: var(--muted); font-size: .9rem; margin: 0; }
+
+    .process { background: linear-gradient(180deg,#061225,#07172b); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 23px;
+      border-left: 2px solid var(--cyan);
+      background: rgba(10,32,57,.56);
+    }
+
